@@ -1,0 +1,343 @@
+/* Genel Sıfırlama ve Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #000000; /* Koyu siyah arka plan */
+    color:lightgray; /* Beyaz metin rengi */
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+
+.image-gradient{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+    width: 800px;
+    height: 800px;
+}
+
+
+
+.layer-blur{
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px white;
+    rotate: -30deg;
+    z-index: -1;
+}
+/* Header/Navigasyon */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    /* Alt kenarlık için hafif bir çizgi */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    position: relative;
+    z-index: 10; /* Üstte kalmasını sağlar */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.navbar a:hover {
+    opacity: 1;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* SIGNING düğmesi */
+.signing-btn {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+.signing-btn:hover {
+    background-color: #9932cc;
+    opacity: 0.5;
+}
+
+/* Ana Bölüm (Hero Section) */
+.hero-section {
+    display: flex;
+    padding: 100px 50px;
+    min-height: calc(100vh - 60px); /* Ekranın geri kalanını kapla */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sağ üst köşedeki ızgara deseni için pseudo-element */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    /* Düşey ve yatay çizgilerle ızgara deseni oluşturma */
+    background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
+        linear-gradient(to left, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px; /* Izgara boyutu */
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.content-left {
+    max-width: 600px;
+    z-index: 1; /* İçeriği ızgara deseninin üstüne getir */
+}
+
+/* INTRUCING etiketi ve mor parlama efekti */
+.intro-tag {
+    display: inline-block;
+    background: linear-gradient(90deg, #4b0082, #9932cc); /* Mor gradyan */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    /* Parlama efekti */
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.7), 0 0 20px rgba(138, 43, 226, 0.4);
+}
+
+.content-left h1 {
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Documentation link stili */
+.cta-doc {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-transform: none;
+    font-weight: 600; 
+}
+
+.cta-doc:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 1;
+}
+
+/* Getstared düğmesi */
+.cta-start {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-transform: none;
+    font-weight: 600;
+}
+
+.cta-start:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      opacity: 1;
+}
+
+.robot-3d{
+    position: absolute;
+    top: 0;
+    right: -20%;
+}
+
+/* --- GALLERY / LOGO SECTION STYLES --- */
+
+.gallery-section {
+    padding: 80px 50px;
+    background-color: #000000; /* Koyu arka planı koru */
+}
+
+.gallery-container {
+    max-width: 1200px; /* İçeriğin merkezde ve sınırlı kalmasını sağlar */
+    margin: 0 auto;
+}
+
+/* GOOGLE REVIEWS etiketi stili (mevcut tasarımdaki gibi) */
+.reviews-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    /* Parlak mor efekti */
+    background: linear-gradient(90deg, #4b0082, #9932cc); 
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.7), 0 0 20px rgba(138, 43, 226, 0.4);
+}
+
+/* Galeri Izgarası (Grid) */
+.gallery-grid {
+    display: grid;
+    /* 3 sütunlu düzen, kartlar arasında boşluk */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; 
+}
+
+/* Tekil Galeri Kartı Stili */
+.gallery-item {
+    background-color: #1a1a1a; /* Koyu gri kart arka planı */
+    padding: 30px;
+    border-radius: 15px; /* Hafif yuvarlatılmış köşeler */
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* Hafif bir 3D/parlaklık efekti */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(75, 0, 130, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* İnce bir çerçeve çizgisi */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Kartın hafifçe kalkması */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7), 0 0 25px rgba(75, 0, 130, 0.6);
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.reviewer-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #9932cc; /* Mor tonunda isim */
+    opacity: 0.8;
+}
+
+/* --- FOTO GALERİ BÖLÜMÜ STİLLERİ --- */
+
+.photo-gallery-section {
+    padding: 80px 50px;
+    background-color: #000000;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+/* Foto Izgarası (Grid Layout) */
+.photo-grid {
+    display: grid;
+    /* 3 eşit sütunlu bir düzen oluşturur */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-auto-rows: 250px; /* Her satırın yüksekliği */
+    gap: 15px; /* Görseller arası boşluk */
+}
+
+.photo-item {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    object-fit: contain;
+    display: block;
+    
+    /* 3D ve Karanlık Temaya Uygun Görünüm */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* large-item sınıfına sahip görselin 2 sütun kaplaması */
+.large-item {
+    grid-column: span 3; 
+}
+
+/* Görsel Yer Tutucu Stili (Gerçek görsel yerine kullanılacak) */
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    /* Mor temaya uygun placeholder */
+    background: linear-gradient(45deg, #1a1a1a, #2a0050, #1a1a1a);
+    background-size: 200% 200%;
+    /* Gerçek resim eklendiğinde bu kısmı kaldırın ve img etiketine object-fit: cover ekleyin */
+    /* animation: placeholder-pulse 5s ease-in-out infinite alternate; */
+}
+
+
+/* Hover Efekti (Üzerine gelindiğinde) */
+.photo-item:hover {
+    transform: scale(1.03); /* Hafifçe büyütme */
+    z-index: 5;
+    /* Mor parlama efekti */
+    box-shadow: 0 0 20px rgba(153, 50, 204, 0.7), 0 0 40px rgba(153, 50, 204, 0.4);
+}
